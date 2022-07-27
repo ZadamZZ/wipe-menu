@@ -14,7 +14,7 @@ function Wipe(id, target)
     local steam = xPlayer.getIdentifier(target)
 
 
-    DropPlayer(target, "Vous avez était wipe de yzBase Bonne chance !")
+    DropPlayer(target, "Vous avez été wipe de space life rp ! ")
 
     
 
