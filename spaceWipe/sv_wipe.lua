@@ -1,8 +1,5 @@
 ESX = nil
 
-TriggerEvent('esx:getSharedObject', function(obj) 
-    ESX = obj 
-end)
 
 RegisterNetEvent("spaceWipe:Wipe")
 AddEventHandler("spaceWipe:Wipe", function(joueur)
@@ -34,20 +31,4 @@ ESX.RegisterServerCallback('Wipe:Group', function(source, cb)
 	cb(xPlayer.getGroup())
 end)
 
-function sendLogs (message,webhook,color)
-	local embeds = {
-		{
-			["title"]=message,
-			["color"]=7419530,
-			
-		}
-		
-	}
-    if message == nil or message == '' then return FALSE end
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({ username = name,embeds = embeds}), { ['Content-Type'] = 'application/json' })
-end
 
-RegisterServerEvent('LOGS:Wipe')
-AddEventHandler('LOGS:Wipe', function(message, webhook)
-sendLogs(message , webhook)
-end)
