@@ -27,17 +27,7 @@ function OpenMenuWipe()
         return
     else
         open = true
-        RageUI.Visible(main, true)
-        CreateThread(function()
-            while open do 
-                RageUI.IsVisible(main, function()
-                    for k,y in pairs(GetActivePlayers()) do 
-                    RageUI.Button(GetPlayerServerId(y).." - "..GetPlayerName(y), nil, { RightLabel = "→→→ß"}, true , {
-                        onSelected = function()
-                            SelectionJoueur = GetPlayerServerId(y)
-                        end
-                    },Confirmation)
-                end
+       
 
                 end)
                 RageUI.IsVisible(Confirmation, function()
@@ -45,12 +35,7 @@ function OpenMenuWipe()
                         onSelected = function()
                             for _, PlayerID in ipairs(GetActivePlayers()) do                            
                             RageUI.CloseAll()
-                                local name = GetPlayerName(PlayerId())
-                                local receveur = GetPlayerName(PlayerID)
-                                TriggerServerEvent("spaceWipe:Wipe", SelectionJoueur)
-                                SelectionJoueur = true
-                                TriggerServerEvent('LOGS:Wipe', name..' à wipe '..receveur, 'WHEEBHOOK')
-                                ESX.ShowNotification('USER : '..name..'a été wipe du serveur !')
+                             
                         end
                         end
                     })
